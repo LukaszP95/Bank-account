@@ -20,29 +20,35 @@ to dodasz walidacje:
 
 
 class BankAccount:
-    def __init__(self, owner : str):
+
+
+    def __init__(self, owner: str):
         self.owner = owner
         self.balance = 0
 
-    def get_balance(self):
+    def get_balance(self) -> float:
         return self.balance
 
-    def deposit(self, amount : float):
+
+
+    def deposit(self, amount: float):
         if amount > 0:
             self.balance += amount
-            print(f"{amount} was paid into the account")
+            print(f"{amount} was paid into the account.")
 
-    def withdraw(self, amount : float):
-        if self.balance >= amount:           # <<<< ten if nie wiem czy jest dobrze, dziala ale czy dobrze?
+
+
+    def withdraw(self, amount: float):
+        if self.balance >= amount:
             self.balance -= amount
-            print(f"{amount} was withdrawn from the account ")
+            print(f"{amount} was withdrawn from the account.")
         else:
-            raise ValueError(f"{amount} amount is too high")
+            raise ValueError(f"{amount} amount is too high.")
 
 
 if __name__ == "__main__":
 
-    account = BankAccount("ola")
+    account = BankAccount("Alice")
 
     print(f"account owner: {account.owner} \naccount balance: {account.balance}")
 
