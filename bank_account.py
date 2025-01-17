@@ -29,14 +29,10 @@ class BankAccount:
     def get_balance(self) -> float:
         return self.balance
 
-
-
     def deposit(self, amount: float):
         if amount > 0:
             self.balance += amount
             print(f"{amount} was paid into the account.")
-
-
 
     def withdraw(self, amount: float):
         if self.balance >= amount:
